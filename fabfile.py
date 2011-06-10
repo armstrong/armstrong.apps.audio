@@ -11,7 +11,6 @@ settings = {
         'django.contrib.sites',
         'armstrong.core.arm_content',
         'armstrong.core.arm_sections',
-        'armstrong.apps.audio',
         'south',
     ),
     'SITE_ID': 1,
