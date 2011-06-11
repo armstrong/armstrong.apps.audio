@@ -1,6 +1,6 @@
-armstrong.apps.content
+armstrong.apps.audio
 ======================
-Provides a concrete implementation of the ``ContentBase`` model inside the
+Provides a implementation of a audio publication making use of the ``AudioFile`` field from the
 `armstrong.core.arm_content`_ package.
 
 
@@ -20,7 +20,7 @@ Installation
 
 ::
 
-    name="armstrong.apps.content"
+    name="armstrong.apps.audio"
     pip install -e git://github.com/armstrongcms/$name#egg=$name
 
 
