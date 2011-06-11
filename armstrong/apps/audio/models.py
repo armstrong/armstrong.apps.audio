@@ -5,7 +5,7 @@ from django.contrib.sites.models import Site
 
 from armstrong.core.arm_content.mixins.publication import PublicationMixin
 
-from .fields import AudioField
+from armstrong.core.arm_content.fields import AudioField
 
 class AudioPublication(PublicationMixin,AuthorMixin):
     file=AudioField()

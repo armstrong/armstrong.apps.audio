@@ -10,6 +10,7 @@ settings = {
         'django.contrib.sessions',
         'django.contrib.sites',
         'armstrong.core.arm_content',
+        'armstrong.apps.audio',
         'armstrong.core.arm_sections',
         'south',
     ),
