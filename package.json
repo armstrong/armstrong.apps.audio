@@ -1,6 +1,6 @@
 {
     "name": "armstrong.apps.audio",
-    "version": "0.0.1a",
+    "version": "0.1.0.alpha.0",
     "description": "Provides a audio integration and management.",
     "install_requires": [
       "Django==1.3",
