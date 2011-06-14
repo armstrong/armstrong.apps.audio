@@ -19,14 +19,16 @@ def convert_to_str(d):
     This is required because setup() does not like unicode in
     the values it is supplied.
     """
+    d2 = {}
     for k, v in d.items():
+        k = str(k)
         if type(v) in [list, tuple]:
-            d[k] = [str(a) for a in v]
+            d2[k] = [str(a) for a in v]
         elif type(v) is dict:
-            d[k] = convert_to_str(v)
+            d2[k] = convert_to_str(v)
         else:
-            d[k] = str(v)
-    return d
+            d2[k] = str(v)
+    return d2
 
 info = convert_to_str(info)
 NAMESPACE_PACKAGES = []
@@ -76,18 +78,14 @@ def build_package(dirpath, dirnames, filenames):
 [build_package(dirpath, dirnames, filenames) for dirpath, dirnames, filenames
         in os.walk(info["name"].replace(".", "/"))]
 
-setup_kwargs = dict(
-    name='armstrong.apps.audio',
-    version='0.0.1a',
-    description='Provides a audio integration and management.',
-    author='Bay Citizen & Texas Tribune',
-    author_email='info@armstrongcms.org',
-    url='http://github.com/armstrongcms/armstrong.apps.audio/',
-    packages=packages,
-    install_requires=[
-        'armstrong.core.content',
-    ],
-    classifiers=[
+setup_kwargs = {
+    "author": "Bay Citizen & Texas Tribune",
+    "author_email": "dev@armstrongcms.org",
+    "url": "http://github.com/armstrong/%s/" % info["name"],
+    "packages": packages,
+    "package_data": {info["name"]: data_files, },
+    "namespace_packages": NAMESPACE_PACKAGES,
+    "classifiers": [
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
@@ -96,8 +94,7 @@ setup_kwargs = dict(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
     ],
-)
+}
 
 setup_kwargs.update(info)
 setup(**setup_kwargs)
-
