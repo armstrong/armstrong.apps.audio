@@ -3,18 +3,18 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 
-from armstrong.core.arm_content.mixins import PublicationMixin, AuthorsMixin
+from armstrong.core.arm_content.models import ContentBase
 
 from armstrong.core.arm_content.fields import AudioField
 
-class AudioPublication(PublicationMixin, AuthorsMixin):
-    file=AudioField()
+class AudioPublication(ContentBase):
+    file=AudioField(upload_to='audio/')
     playtime=models.PositiveIntegerField("playtime in seconds",null=True, blank=True)    
-    filetype=models.CharField("filetype",null=True, blank=True)    
+    filetype=models.CharField("filetype",max_length=16,null=True, blank=True)    
+
 
 
     def save(*args, **kwargs):
         if hasattr(self.file, metadata):
             #populate stuff
-            if 
-
+            pass

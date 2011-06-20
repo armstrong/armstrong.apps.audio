@@ -16,14 +16,13 @@ class AudioViewTestCase(TestCase):
         self.assertEqual(response.context['audio_pub'], audio_pub)
         self.assertContains( "stuff that it should contain")
 
-    def test_audio_type_unsupported(self):
-        '''if the player cant play the file, it should render as a download link'''
-        audio_pub = load_audio_pub('test.flac')
-        response = self.c.get(audio_pub.get_absolute_url())
-        self.assertContains(response, "href=\"%s\"" % audio_pub.file.url())
-
+    #def test_audio_type_unsupported(self):
+    #    '''if the player cant play the file, it should render as a download link'''
+    #    audio_pub = load_audio_pub('test.flac')
+    #    response = self.c.get(audio_pub.get_absolute_url())
+    #    self.assertContains(response, "href=\"%s\"" % audio_pub.file.url())
     def test_audio_list(self):
-        audio_pub = load_audio_pub('test.flac')
+        audio_pub = load_audio_pub('test.ogg')
         audio_pub2 = load_audio_pub('test.mp3')
         response = self.c.get(reverse('audio_pub_list'))
 

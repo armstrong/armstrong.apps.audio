@@ -8,13 +8,12 @@ settings = {
         'django.contrib.auth',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
-        'django.contrib.sites',
         'armstrong.core.arm_content',
         'armstrong.apps.audio',
         'armstrong.core.arm_sections',
         'south',
     ),
-    'SITE_ID': 1,
+    'ROOT_URLCONF': 'armstrong.core.arm_content.tests.arm_content_support.urls',
 }
 
 main_app = "audio"
