@@ -7,12 +7,16 @@ from armstrong.core.arm_content.models import ContentBase
 
 from armstrong.core.arm_content.fields import AudioField
 
+
 class AudioPublication(ContentBase):
-    file=AudioField(upload_to='audio/')
-    playtime=models.PositiveIntegerField("playtime in seconds",null=True, blank=True)    
-    filetype=models.CharField("filetype",max_length=16,null=True, blank=True)    
-
-
+    file = AudioField(upload_to='audio/')
+    playtime = models.PositiveIntegerField("playtime in seconds",
+                                           null=True,
+                                           blank=True)
+    filetype = models.CharField("filetype",
+                                max_length=16,
+                                null=True,
+                                blank=True)
 
     def save(*args, **kwargs):
         if hasattr(self.file, metadata):
