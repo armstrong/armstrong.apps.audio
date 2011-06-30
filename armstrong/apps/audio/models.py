@@ -13,12 +13,25 @@ class AudioPublication(ContentBase):
     playtime = models.PositiveIntegerField("playtime in seconds",
                                            null=True,
                                            blank=True)
+
     filetype = models.CharField("filetype",
                                 max_length=16,
                                 null=True,
                                 blank=True)
 
-    def save(*args, **kwargs):
+    artist = models.CharField("artist",
+                              max_length=100,
+                              null=True,
+                              blank=True,
+                             )
+
+    genre = models.CharField("genre",
+                              max_length=100,
+                              null=True,
+                              blank=True,
+                             )
+
+    def save(self, *args, **kwargs):
         if hasattr(self.file, metadata):
             #populate stuff
             pass

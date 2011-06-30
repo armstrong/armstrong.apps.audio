@@ -8,7 +8,8 @@
       "django-reversion==1.4",
       "django-taggit==0.9.3",
       "armstrong.core.arm_sections>=0.1",
-      "armstrong.core.arm_content>=0.2"
+      "armstrong.core.arm_content>=0.3.0",
+      "armstrong.utils.backends>=0.2"
 
     ]
 }
