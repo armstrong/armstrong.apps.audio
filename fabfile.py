@@ -1,5 +1,6 @@
 from armstrong.dev.tasks import *
 
+full_name= 'armstrong.apps.audio'
 
 settings = {
     'DEBUG': True,
@@ -9,7 +10,7 @@ settings = {
         'django.contrib.contenttypes',
         'django.contrib.sessions',
         'armstrong.core.arm_content',
-        'armstrong.apps.audio',
+        full_name,
         'armstrong.core.arm_sections',
         'south',
     ),
