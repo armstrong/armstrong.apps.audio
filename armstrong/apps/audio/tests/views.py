@@ -23,7 +23,6 @@ class AudioViewTestCase(TestCase):
         response = self.c.get('/audio/upload/')
         apf=AudioPubForm(instance=audio_pub)
         del apf.initial['id']
-        del apf.initial['']
         apf.initial.update({'pub_date_o':'2011-07-13', 'pub_date_1':'12:02:23', 'pub_status':'P', 'tags':'test',})
         post_response =  self.c.post('/audio/upload/', apf.initial)
         #todo: we need to add a bunch of boiler plate test utils to arm_content.tests.utils for supporting content base
