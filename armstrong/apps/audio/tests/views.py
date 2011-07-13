@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 from django.test.client import Client
 from django.core.urlresolvers import reverse
 from ._utils import load_audio_pub, TestCase
-from ._utils import load_audio_pub, TestCase
 
+from ..models import AudioPublication
+from audio_support.forms import AudioPubForm
 
 class AudioViewTestCase(TestCase):
 
@@ -13,13 +14,20 @@ class AudioViewTestCase(TestCase):
 
     def test_audio_detail(self):
         audio_pub = load_audio_pub('test.mp3')
-        response = self.c.get(reverse('audio_detail') + '/' + audio_pub.title)
-        self.assertEqual(response.context['audio_pub'], audio_pub)
-        self.assertContains("stuff that it should contain")
+        response = self.c.get( '/audio/' + audio_pub.slug+'/')
+        self.assertEqual(response.context['audio_publication'], audio_pub)
 
     def test_audio_upload(self):
-        pass 
-    
+        audio_pub = load_audio_pub('test.mp3')
+        #todo: this test is a lot of data entry to write skiping it and manually testing in the name of speed
+        response = self.c.get('/audio/upload/')
+        apf=AudioPubForm(instance=audio_pub)
+        del apf.initial['id']
+        del apf.initial['']
+        apf.initial.update({'pub_date_o':'2011-07-13', 'pub_date_1':'12:02:23', 'pub_status':'P', 'tags':'test',})
+        post_response =  self.c.post('/audio/upload/', apf.initial)
+        #todo: we need to add a bunch of boiler plate test utils to arm_content.tests.utils for supporting content base
+
     def test_admin_widget(self):
         pass
  
@@ -27,5 +35,5 @@ class AudioViewTestCase(TestCase):
         audio_pub = load_audio_pub('test.ogg')
         audio_pub2 = load_audio_pub('test.mp3')
         response = self.c.get(reverse('audio_list'))
-        self.assertEqual(list(response.context['audio_list']),
-                list(AudioPublications.objects.all()))
+        self.assertEqual(list(response.context['audio_publication_list']),
+                list(AudioPublication.objects.all()))
