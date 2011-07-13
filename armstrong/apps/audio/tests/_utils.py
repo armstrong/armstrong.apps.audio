@@ -1,9 +1,6 @@
-from datetime import datetime, timedelta, date, time
 import random
 
 from django.test import TestCase as DjangoTestCase
-from django.test.client import RequestFactory
-from django.core.files import File
 
 from ..models import AudioPublication
 from armstrong.core.arm_content.tests import load_audio_model

@@ -1,12 +1,7 @@
 from django.db import models
-from django.core.urlresolvers import reverse
-from django.contrib.auth.models import User
-from django.contrib.sites.models import Site
 
 from armstrong.apps.content.models import ContentBase
-
 from armstrong.core.arm_content.fields import AudioField
-from armstrong.core.arm_content.models import ContentBase
 
 
 class AudioPublication(ContentBase):
