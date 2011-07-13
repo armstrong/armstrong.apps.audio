@@ -1,13 +1,14 @@
-from django.views.generic import list_detail
+from django.views.generic.list import MultipleObjectMixin
+from django.views.generic import  DetailView, CreateView, ListView
 
 from .models import AudioPublication
 
 
-class AudioPublicationList(list_detail.object_list):
+class AudioPublicationList(ListView):
     model = AudioPublication
 
 
-class AudioPublicationDetail(list_detail.object_detail):
+class AudioPublicationDetail(DetailView):
     model = AudioPublication
 
 
