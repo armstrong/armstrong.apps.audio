@@ -36,10 +36,8 @@ class AudioPublication(ContentBase):
         return self.__str__()
 
     def __str__(self):
-        return "%s by %s authored by %s" %(self.file, self.artist, self.authors)
-                            
+        return "%s by %s authored by %s" % (self.file, self.artist, self.authors)
 
     @property
     def player_as_html(self):
         return self.file.render()
-    

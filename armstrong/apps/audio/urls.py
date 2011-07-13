@@ -11,5 +11,4 @@ urlpatterns = patterns('',
 
     url(r'^(?P<slug>[-\w]+)/$', AudioViews.AudioPublicationDetail.as_view(),
                 name='audio_detail'),
-
 )

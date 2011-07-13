@@ -7,6 +7,7 @@ from ._utils import load_audio_pub, TestCase
 from ..models import AudioPublication
 from audio_support.forms import AudioPubForm
 
+
 class AudioViewTestCase(TestCase):
 
     def setUp(self):
@@ -14,14 +15,17 @@ class AudioViewTestCase(TestCase):
 
     def test_audio_detail(self):
         audio_pub = load_audio_pub('test.mp3')
-        response = self.c.get( '/audio/' + audio_pub.slug+'/')
+        response = self.c.get('/audio/' + audio_pub.slug + '/')
         self.assertEqual(response.context['audio_publication'], audio_pub)
 
     def test_audio_upload(self):
         audio_pub = load_audio_pub('test.mp3')
-        #todo: this test is a lot of data entry to write skiping it and manually testing in the name of speed
+        #todo: this test is a lot of data entry to write 
+        #skiping it and manually testing in the name of speed
         response = self.c.get('/audio/upload/')
-        apf=AudioPubForm(instance=audio_pub)
+        #was trying to be lazy, turns out its not really going to work. 
+        #I will deal with it later.
+        apf = AudioPubForm(instance=audio_pub)
         del apf.initial['id']
         apf.initial.update({'pub_date_o':'2011-07-13', 'pub_date_1':'12:02:23', 'pub_status':'P', 'tags':'test',})
         post_response =  self.c.post('/audio/upload/', apf.initial)
