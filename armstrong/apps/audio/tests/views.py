@@ -1,5 +1,3 @@
-from datetime import date, timedelta
-from django.contrib.auth.models import User
 from django.test.client import Client
 from django.core.urlresolvers import reverse
 from ._utils import load_audio_pub, TestCase
