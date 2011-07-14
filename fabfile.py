@@ -18,6 +18,7 @@ settings = {
         'armstrong.core.arm_content',
         'armstrong.core.arm_sections',
         'armstrong.apps.audio.tests.audio_support',
+        'armstrong.apps.content',
         full_name,
         'south',
     ),

@@ -1,10 +1,10 @@
 from django.db import models
 
-from armstrong.core.arm_content.models import ContentBase
+from armstrong.apps.content.models import Content
 from armstrong.core.arm_content.fields import AudioField
 
 
-class AudioPublication(ContentBase):
+class AudioPublication(Content):
     file = AudioField(upload_to='audio/')
     playtime = models.PositiveIntegerField("playtime in seconds",
                                            null=True,

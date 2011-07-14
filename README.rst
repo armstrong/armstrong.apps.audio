@@ -13,15 +13,13 @@ Provides a implementation of a audio publication making use of the ``AudioFile``
 Usage
 -----
 
-**TODO**
 
 Installation
 ------------
 
 ::
-
-    name="armstrong.apps.audio"
-    pip install -e git://github.com/armstrongcms/$name#egg=$name
+    pip install armstrong.apps.audio
+    
 
 
 Contributing
