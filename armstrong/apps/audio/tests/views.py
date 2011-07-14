@@ -1,12 +1,13 @@
 from django.test.client import Client
 from django.core.urlresolvers import reverse
-from ._utils import load_audio_pub, TestCase
+from ._utils import load_audio_pub
+from armstrong.dev.tests.utils import ArmstrongTestCase
 
 from ..models import AudioPublication
 from audio_support.forms import AudioPubForm
 
 
-class AudioViewTestCase(TestCase):
+class AudioViewTestCase(ArmstrongTestCase):
 
     def setUp(self):
         self.c = Client()

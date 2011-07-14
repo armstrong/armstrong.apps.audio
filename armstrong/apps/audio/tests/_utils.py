@@ -1,8 +1,6 @@
 from datetime import datetime 
 import random
 
-from django.test import TestCase as DjangoTestCase
-
 from ..models import AudioPublication
 from armstrong.core.arm_content.tests import load_audio_model
 
@@ -21,5 +19,3 @@ def load_audio_pub(filename):
     return am
 
 
-class TestCase(DjangoTestCase):
-    pass
