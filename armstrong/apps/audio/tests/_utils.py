@@ -1,7 +1,7 @@
 from datetime import datetime 
 import random
 
-from ..models import AudioPublication
+from ..models import Audio
 from armstrong.core.arm_content.tests import load_audio_model
 
 
@@ -14,7 +14,7 @@ def load_audio_pub(filename):
 
     am = load_audio_model(filename=filename,
                      file_field_name='file',
-                     model=AudioPublication,
+                     model=Audio,
                      model_args=model_args)
     return am
 

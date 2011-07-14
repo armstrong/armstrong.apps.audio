@@ -1,14 +1,14 @@
 from django.conf.urls.defaults import *
-from armstrong.apps.audio import views as AudioViews
+from armstrong.apps.audio import views as audio_views
 
 urlpatterns = patterns('',
 
-    url(r'^$', AudioViews.AudioPublicationList.as_view(),
+    url(r'^$', audio_views.ListView.as_view(),
                 name='audio_list'),
 
-    url(r'^upload/$', AudioViews.AudioPublicationCreateView.as_view(),
+    url(r'^upload/$', audio_views.CreateView.as_view(),
                 name='audio_upload'),
 
-    url(r'^(?P<slug>[-\w]+)/$', AudioViews.AudioPublicationDetail.as_view(),
+    url(r'^(?P<slug>[-\w]+)/$', audio_views.DetailView.as_view(),
                 name='audio_detail'),
 )

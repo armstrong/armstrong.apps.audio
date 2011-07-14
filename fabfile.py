@@ -22,6 +22,7 @@ settings = {
         full_name,
         'south',
     ),
+    'SITE_ID': 1,
     'ARMSTRONG_EXTERNAL_AUDIO_METADATA_BACKEND': 'armstrong.apps.audio.backends.id3reader.Id3readerBackend',
     'STATIC_ROOT': './armstrong/apps/audio/tests/audio_support/static/',
     'STATIC_URL': '/static/',

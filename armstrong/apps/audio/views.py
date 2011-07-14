@@ -1,18 +1,18 @@
 from django.views.generic.list import MultipleObjectMixin
 from django.views.generic import  DetailView, CreateView, ListView
 
-from .models import AudioPublication
+from .models import Audio
 
 
-class AudioPublicationList(ListView):
+class ListView(ListView):
     context_object_name = "audio_publication_list"
-    model = AudioPublication
+    model = Audio
 
 
-class AudioPublicationDetail(DetailView):
+class DetailView(DetailView):
     context_object_name = "audio_publication"
-    model = AudioPublication
+    model = Audio
 
 
-class AudioPublicationCreateView(CreateView):
-    model = AudioPublication
+class CreateView(CreateView):
+    model = Audio

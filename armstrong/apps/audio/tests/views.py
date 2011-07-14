@@ -3,8 +3,8 @@ from django.core.urlresolvers import reverse
 from ._utils import load_audio_pub
 from armstrong.dev.tests.utils import ArmstrongTestCase
 
-from ..models import AudioPublication
-from audio_support.forms import AudioPubForm
+from ..models import Audio
+from audio_support.forms import AudioForm
 
 
 class AudioViewTestCase(ArmstrongTestCase):
@@ -24,7 +24,7 @@ class AudioViewTestCase(ArmstrongTestCase):
         response = self.c.get('/audio/upload/')
         #was trying to be lazy, turns out its not really going to work. 
         #I will deal with it later.
-        apf = AudioPubForm(instance=audio_pub)
+        apf = AudioForm(instance=audio_pub)
         del apf.initial['id']
         apf.initial.update({'pub_date_o':'2011-07-13', 'pub_date_1':'12:02:23', 'pub_status':'P', 'tags':'test',})
         post_response =  self.c.post('/audio/upload/', apf.initial)
@@ -38,4 +38,4 @@ class AudioViewTestCase(ArmstrongTestCase):
         audio_pub2 = load_audio_pub('test.mp3')
         response = self.c.get(reverse('audio_list'))
         self.assertEqual(list(response.context['audio_publication_list']),
-                list(AudioPublication.objects.all()))
+                list(Audio.objects.all()))

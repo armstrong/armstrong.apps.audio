@@ -4,7 +4,7 @@ from armstrong.apps.content.models import Content
 from armstrong.core.arm_content.fields import AudioField
 
 
-class AudioPublication(Content):
+class Audio(Content):
     file = AudioField(upload_to='audio/')
     playtime = models.PositiveIntegerField("playtime in seconds",
                                            null=True,
