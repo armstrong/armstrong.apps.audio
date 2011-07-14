@@ -1,6 +1,6 @@
 from django.db import models
 
-from armstrong.apps.content.models import ContentBase
+from armstrong.core.arm_content.models import ContentBase
 from armstrong.core.arm_content.fields import AudioField
 
 
