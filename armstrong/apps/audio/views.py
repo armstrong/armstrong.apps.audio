@@ -5,12 +5,12 @@ from .models import Audio
 
 
 class ListView(ListView):
-    context_object_name = "audio_publication_list"
+    context_object_name = "audio_list"
     model = Audio
 
 
 class DetailView(DetailView):
-    context_object_name = "audio_publication"
+    context_object_name = "audio"
     model = Audio
 
 

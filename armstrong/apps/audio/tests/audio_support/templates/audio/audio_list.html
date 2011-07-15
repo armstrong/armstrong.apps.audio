@@ -8,8 +8,8 @@
 </head>
 <body>
 <ul>
-    {% for audiopub in object_list %}
-        <li> player: {{audiopub.player_as_html}} </li>
+    {% for audio in object_list %}
+        <li> {{audio}} {{audio.html}} </li>
     {% endfor %}
 </ul>
 </body>
