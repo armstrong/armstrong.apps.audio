@@ -1,8 +1,5 @@
 from armstrong.dev.tasks import *
 
-full_name= 'armstrong.apps.audio'
-main_app = "audio"
-tested_apps = (main_app, )
 
 settings = {
     'DEBUG': True,
@@ -19,7 +16,8 @@ settings = {
         'armstrong.core.arm_sections',
         'armstrong.apps.audio.tests.audio_support',
         'armstrong.apps.content',
-        full_name,
+        # full name of app
+        'armstrong.apps.audio',
         'south',
     ),
     'SITE_ID': 1,
@@ -30,4 +28,7 @@ settings = {
     'MEDIA_URL': '/media/',
     'ROOT_URLCONF': 'armstrong.apps.audio.tests.audio_support.urls',
 }
+full_name= 'armstrong.apps.audio'
+main_app = "audio"
+tested_apps = (main_app, )
 
