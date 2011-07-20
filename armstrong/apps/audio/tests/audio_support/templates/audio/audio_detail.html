@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>audio lists</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script>
+<script type="text/javascript" src="/static/js/jquery.jplayer.min.js"> </script>
+<link href="/static/skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+{{audio}}
+<ul id='audio_details'>
+    {% for fieldname,field in audio.file.metadata.items%}
+        <li>{{fieldname}}:{{field}}</li>
+    {% endfor %}
+</ul>
+{{audio.html}}
+</body>
+</html>
+~           

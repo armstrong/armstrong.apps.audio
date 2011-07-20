@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>audio lists</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script>
+<script type="text/javascript" src="/static/js/jquery.jplayer.min.js"> </script>
+<link href="/static/skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<ul>
+    {% for audio in object_list %}
+        <li> {{audio}} {{audio.html}} </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,6 +1,6 @@
 armstrong.apps.audio
 ======================
-Provides a implementation of a audio publication making use of the ``AudioFile`` field from the
+Provides a implementation of a audio content model making use of the ``AudioFile`` field from the
 `armstrong.core.arm_content`_ package.
 
 
@@ -13,15 +13,16 @@ Provides a implementation of a audio publication making use of the ``AudioFile``
 Usage
 -----
 
-**TODO**
+see the audio documentation on `armstrong.core.arm_content` for more details on the internalls. 
 
 Installation
 ------------
 
 ::
+    pip install armstrong.apps.audio
+    pip install armstrong.apps.audio.backends.xxxxxxxxx
 
-    name="armstrong.apps.audio"
-    pip install -e git://github.com/armstrongcms/$name#egg=$name
+where xxx  is one of the available audio backends.
 
 
 Contributing
